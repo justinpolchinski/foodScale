@@ -1,0 +1,72 @@
+<html>
+<title>Food Calorator</title>
+	<style>
+		body{
+			background:black;
+			color: white;
+		}
+		#inputContainer{
+			
+			text-align: left;
+			width: 30%;
+			margin: auto;
+			border: 2px solid white;
+		}
+		.inputStuff{
+			margin-left:1%;
+			padding: 0.5rem;
+			margin: 1%;
+			width: 85%;
+		}
+		#resultBtn{
+			margin-left:1%;
+		}
+		#innerContainer{
+			margin-left:1%;
+			margin-bottom:1%;
+		}
+	</style>
+	<body>
+		<center><h1>The Calorator</h1></center>
+		<br>
+		<div id="inputContainer">
+			<div id="innerContainer">
+		Scale Weight:
+			<input class="inputStuff" id="actualWeight" placeholder="Enter Scale Weight"></input>
+			<br>
+		Serving Size:
+			<input class="inputStuff" id="servingSize" placeholder="Enter serving Size weight"></input>
+			<br>
+		Calories in Serving:
+			<input class="inputStuff" id="calsInServing" placeholder="Enter Calories in serving size"></input>
+			<br>
+		Click Button for Results!
+		<br>
+			<button id="resultBtn" onclick="cal()">How Many Calories</button>
+			</div>
+		</div>
+		<br>
+		<center>
+		<strong>
+			<h3>Calories: </h3>
+			<h2 id="result1"></h2>
+		</strong>
+		</center>
+		<script>
+			function cal(){
+				console.log("cal function");
+				x = document.getElementById("actualWeight").value;
+				y = document.getElementById("servingSize").value;
+				z = document.getElementById("calsInServing").value;
+				result = (x/y)*z;
+				if (result>=0){
+					console.log("Getting Result");
+					document.getElementById("result1").innerHTML = result + " Calories";
+				}
+				else{
+					document.getElementById("result1").innerHTML = "Enter All Information!"
+				}
+			}
+		</script>
+	</body>
+</html>
